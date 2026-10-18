@@ -1,0 +1,12 @@
+node_modules
+.env
+.env.*
+!.env.example
+
+verseora.db
+*.db
+
+node_modules/
+dist/
+__pycache__/
+.venv/

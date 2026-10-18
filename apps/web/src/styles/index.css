@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #07090e;
+    --bg-surface: #0d1019;
+    --bg-surface-elevated: #131724;
+    --bg-surface-hover: #191f30;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-medium: rgba(255, 255, 255, 0.13);
+    --text-primary: #f7f4ee;
+    --text-secondary: #b3ab9c;
+    --text-muted: #746e63;
+    --accent-violet: #8b7cf6;
+    --accent-rose: #e06d80;
+    --accent-amber: #d99b43;
+    --accent-sage: #5ea38f;
+  }
+
+  .light {
+    --bg-canvas: #fcfaf6;
+    --bg-surface: #f5f0e6;
+    --bg-surface-elevated: #ede5d6;
+    --bg-surface-hover: #e3d9c5;
+    --border-subtle: rgba(0, 0, 0, 0.07);
+    --border-medium: rgba(0, 0, 0, 0.13);
+    --text-primary: #191816;
+    --text-secondary: #5a544b;
+    --text-muted: #8c8375;
+    --accent-violet: #7c3aed;
+    --accent-rose: #be3b54;
+    --accent-amber: #b87a22;
+    --accent-sage: #3d806d;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Quiet Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(139, 124, 246, 0.2);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 124, 246, 0.45);
+  }
+}
+
+/* Restrained Editorial Surfaces (Never overly glassmorphic or loud) */
+.editorial-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.editorial-card:hover {
+  border-color: var(--border-medium);
+}
+
+.editorial-surface-elevated {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+}
+
+.editorial-input {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.editorial-input:focus {
+  border-color: var(--accent-violet);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 124, 246, 0.15);
+}
+
+/* Poetic Stanzas Typography */
+.poem-text {
+  font-family: 'Playfair Display', 'Noto Serif Devanagari', Georgia, serif;
+  line-height: 2.1;
+  letter-spacing: 0.015em;
+}
+
+.devanagari-text {
+  font-family: 'Noto Serif Devanagari', 'Rozha One', 'Playfair Display', serif;
+  line-height: 2.2;
+  letter-spacing: 0.02em;
+}
+
+/* Drop cap for long editorial thoughts */
+.editorial-dropcap::first-letter {
+  font-family: 'Playfair Display', Georgia, serif;
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.85;
+  padding-right: 0.6rem;
+  padding-top: 0.2rem;
+  color: var(--accent-violet);
+}
